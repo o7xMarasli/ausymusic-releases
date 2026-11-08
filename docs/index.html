@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ausy-Music: Müziğin, tam sana göre</title>
+    <meta name="description" content="Ausy-Music, Windows için ücretsiz müzik uygulaması. Senkron sözler, sana özel Ausy Mix'ler, internetsiz dinleme ve dinamik ada." />
+    <meta name="theme-color" content="#021d22" />
+    <meta property="og:title" content="Ausy-Music" />
+    <meta property="og:description" content="Windows için ücretsiz müzik uygulaması. Senkron sözler, Ausy Mix ve dinamik ada." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://o7xmarasli.github.io/ausymusic-releases/assets/home.png" />
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="brand" href="#top"><img src="assets/logo.png" alt="" width="34" height="34" /> Ausy-Music</a>
+      <nav class="links" aria-label="Sayfa">
+        <a href="#features" data-t="nav.features">Özellikler</a>
+        <a href="#download" data-t="nav.download">İndir</a>
+        <a href="#faq" data-t="nav.faq">Sorular</a>
+      </nav>
+      <button class="lang" id="lang" type="button" aria-label="Dil / Language">EN</button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="eyebrow" data-t="hero.eyebrow">Windows için ücretsiz</p>
+        <h1 data-t="hero.title">Müziğin, tam sana göre.</h1>
+        <p class="lead" data-t="hero.lead">Milyonlarca şarkı, satır satır akan sözler ve dinledikçe sana göre şekillenen Ausy Mix'ler. Hepsi tek, sade bir uygulamada.</p>
+        <div class="cta">
+          <a class="btn primary" data-download href="https://github.com/o7xMarasli/ausymusic-releases/releases/latest">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 20h16" /></svg>
+            <span data-t="hero.cta">Windows için indir</span>
+          </a>
+          <span class="meta" id="meta" data-t="hero.meta">Windows 10 ve 11, 64 bit</span>
+        </div>
+
+        <div class="stage">
+          <div class="island" aria-hidden="true">
+            <span class="cover"></span>
+            <span class="eq"><i></i><i></i><i></i><i></i></span>
+            <span class="song" data-t="demo.song">Gece Treni</span>
+            <span class="more">
+              <b data-t="demo.song">Gece Treni</b>
+              <em>Ausy Demo</em>
+              <span class="bar"><u></u></span>
+            </span>
+          </div>
+          <img class="shot" src="assets/home.webp" width="1280" height="800" alt="Ausy-Music ana sayfası: Ausy Mix kartları ve son dinlenenler" data-alt="alt.home" />
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <h2 data-t="f.title">Dinlemeyi güzelleştiren ayrıntılar</h2>
+        <div class="bento">
+          <article class="card wide lyrics">
+            <div class="copy">
+              <h3 data-t="f.lyrics">Sözler şarkıyla akar</h3>
+              <p data-t="f.lyricsText">Senkron sözleri satır satır izle, bir satıra dokunup oraya atla. Klasik, Karaoke, Odak ve Sinema görünümleri arasından seç.</p>
+            </div>
+            <div class="karaoke" aria-hidden="true">
+              <p>Şehir uyurken yollardayım</p>
+              <p class="on">Rüzgâr adını fısıldıyor</p>
+              <p>Bir sonraki durak sensin</p>
+            </div>
+          </article>
+
+          <article class="card mix">
+            <div class="mixart" aria-hidden="true">
+              <small>AUSY MIX</small>
+              <b>Mix 1</b>
+            </div>
+            <h3 data-t="f.mix">Ausy Mix</h3>
+            <p data-t="f.mixText">Dinledikçe sana özel karışımlar hazırlanır. Beğendiğini tek dokunuşla listene kaydet.</p>
+          </article>
+
+          <article class="card">
+            <div class="pillrow" aria-hidden="true"><span></span></div>
+            <h3 data-t="f.island">Dinamik ada</h3>
+            <p data-t="f.islandText">Başka bir uygulamaya geçtiğinde ekranın üstünde belirir, üzerine gelince açılır. İstersen her zaman üstte duran mini oynatıcıya geç.</p>
+          </article>
+
+          <article class="card">
+            <h3 data-t="f.import">Listelerini getir</h3>
+            <p data-t="f.importText">Bir çalma listesi linki yapıştır, şarkılar kütüphanene gelsin. Sürükleyip sırala, kapağını seç.</p>
+          </article>
+
+          <article class="card">
+            <h3 data-t="f.offline">İnternetsiz dinle</h3>
+            <p data-t="f.offlineText">Şarkı, albüm ve listeleri indir. Bilgisayarındaki müzik klasörlerini de aynı yerde çal.</p>
+          </article>
+
+          <article class="card">
+            <h3 data-t="f.social">Arkadaşlarını takip et</h3>
+            <p data-t="f.socialText">Profilini oluştur, istediğin listeleri paylaş. Listelerin sen açmadıkça gizli kalır.</p>
+          </article>
+
+          <article class="card wide">
+            <h3 data-t="f.sync">Her zaman güncel</h3>
+            <p data-t="f.syncText">Kütüphanen hesabınla eşitlenir, uygulama yeni sürümleri müzik çalmıyorken kendisi kurar.</p>
+          </article>
+        </div>
+
+        <figure class="wide-shot">
+          <img src="assets/lyrics.webp" width="1280" height="800" loading="lazy" alt="Tam ekran oynatıcı ve senkron sözler" data-alt="alt.lyrics" />
+        </figure>
+      </section>
+
+      <section class="section download" id="download">
+        <h2 data-t="d.title">Dakikalar içinde hazır</h2>
+        <div class="platforms">
+          <div class="platform">
+            <h3>Windows</h3>
+            <p data-t="d.win">Windows 10 ve 11, 64 bit. Kurulumdan sonra kendini güncel tutar.</p>
+            <a class="btn primary" data-download href="https://github.com/o7xMarasli/ausymusic-releases/releases/latest"><span data-t="hero.cta">Windows için indir</span></a>
+            <small id="version"></small>
+          </div>
+          <div class="platform soon">
+            <h3>Android</h3>
+            <p data-t="d.android">Üzerinde çalışıyoruz. Hazır olunca buradan indirebileceksin.</p>
+            <span class="btn disabled" data-t="d.soon">Yakında</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq">
+        <h2 data-t="q.title">Merak edilenler</h2>
+        <details>
+          <summary data-t="q.free">Ücretsiz mi?</summary>
+          <p data-t="q.freeA">Evet. Ücretsiz bir hesap açman yeterli.</p>
+        </details>
+        <details>
+          <summary data-t="q.warn">Windows neden uyarı gösteriyor?</summary>
+          <p data-t="q.warnA">Uygulamanın henüz ticari kod imzası yok, bu yüzden SmartScreen uyarabilir. "Ek bilgi" ve ardından "Yine de çalıştır" ile devam edebilirsin. Güncellemeler ise uygulama tarafından imzası doğrulanarak kurulur.</p>
+        </details>
+        <details>
+          <summary data-t="q.account">Neden hesap gerekiyor?</summary>
+          <p data-t="q.accountA">Beğenilerin, listelerin ve ayarların cihazlar arasında eşitlensin diye. E-postan profilinde görünmez.</p>
+        </details>
+        <details>
+          <summary data-t="q.android">Android ne zaman gelecek?</summary>
+          <p data-t="q.androidA">Geliştirme sürüyor. Çıktığında bu sayfadan duyuracağız.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <p data-t="foot.note">Ausy-Music bağımsız bir projedir; YouTube, Spotify veya bağlı şirketlerle ilişkisi yoktur.</p>
+      <p>
+        <a href="https://github.com/o7xMarasli/ausymusic-releases/releases" data-t="foot.releases">Tüm sürümler</a>
+      </p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
