@@ -38,9 +38,9 @@ const EN = {
   "q.accountA": "So your likes, playlists and settings sync across devices. Your email is never shown on your profile.",
   "q.android": "When is Android coming?",
   "q.androidA": "It is in development. We will announce it on this page.",
-  "foot.note": "Ausy-Music is an independent project and is not affiliated with YouTube, Spotify or their companies.",
+  "foot.note": "Ausy Music is an independent project and is not affiliated with YouTube, Spotify or their companies.",
   "foot.releases": "All releases",
-  "alt.home": "Ausy-Music home screen with Ausy Mix cards and recently played songs",
+  "alt.home": "Ausy Music home screen with Ausy Mix cards and recently played songs",
   "alt.lyrics": "Fullscreen player with synced lyrics",
 };
 
@@ -65,7 +65,7 @@ function readLang() {
 function apply(lang) {
   const en = lang === "en";
   document.documentElement.lang = lang;
-  document.title = en ? "Ausy-Music: Your music, made for you" : title;
+  document.title = en ? "Ausy Music: Your music, made for you" : title;
   document.querySelectorAll("[data-t]").forEach((el) => {
     el.textContent = en ? (EN[el.dataset.t] ?? original.get(el)) : original.get(el);
   });
