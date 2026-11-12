@@ -3,133 +3,276 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ausy Music: Müziğin, tam sana göre</title>
-    <meta name="description" content="Ausy Music, Windows için ücretsiz müzik uygulaması. Senkron sözler, sana özel Ausy Mix'ler, internetsiz dinleme ve dinamik ada." />
-    <meta name="theme-color" content="#021d22" />
+    <title>Ausy Music · Ücretsiz müzik uygulaması</title>
+    <meta name="description" content="Ausy Music: Windows için ücretsiz müzik uygulaması. Senkron sözler, Daily Mix, Haftalık Keşifler, arkadaşlarla Jam, eşyalar ve başarımlar, internetsiz dinleme." />
+    <meta name="theme-color" content="#0a0a0b" />
     <meta property="og:title" content="Ausy Music" />
-    <meta property="og:description" content="Windows için ücretsiz müzik uygulaması. Senkron sözler, Ausy Mix ve dinamik ada." />
+    <meta property="og:description" content="Windows için ücretsiz müzik uygulaması. Senkron sözler, Daily Mix, Jam, eşyalar ve başarımlar." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://o7xmarasli.github.io/ausymusic-releases/assets/home.png" />
+    <meta property="og:image" content="https://o7xmarasli.github.io/ausymusic-releases/assets/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="assets/logo.png" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="preload" href="assets/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="site.css" />
   </head>
   <body>
-    <header class="nav">
-      <a class="brand" href="#top"><img src="assets/logo.png" alt="" width="34" height="34" /> Ausy Music</a>
+    <header class="nav" id="nav">
+      <a class="brand" href="#top"><img src="assets/logo.png" alt="" width="32" height="32" /> Ausy Music</a>
       <nav class="links" aria-label="Sayfa">
         <a href="#features" data-t="nav.features">Özellikler</a>
-        <a href="#download" data-t="nav.download">İndir</a>
+        <a href="#social" data-t="nav.social">Arkadaşlar</a>
+        <a href="#releases" data-t="nav.releases">Sürümler</a>
         <a href="#faq" data-t="nav.faq">Sorular</a>
       </nav>
-      <button class="lang" id="lang" type="button" aria-label="Dil / Language">EN</button>
+      <div class="nav-end">
+        <button class="lang" id="lang" type="button" aria-label="Dil / Language">EN</button>
+        <a class="btn small primary" data-download href="https://github.com/o7xMarasli/ausymusic-releases/releases/latest" data-t="nav.download">İndir</a>
+      </div>
     </header>
 
     <main id="top">
+      <!-- Giriş -->
       <section class="hero">
-        <p class="eyebrow" data-t="hero.eyebrow">Windows için ücretsiz</p>
-        <h1 data-t="hero.title">Müziğin, tam sana göre.</h1>
-        <p class="lead" data-t="hero.lead">Milyonlarca şarkı, satır satır akan sözler ve dinledikçe sana göre şekillenen Ausy Mix'ler. Hepsi tek, sade bir uygulamada.</p>
-        <div class="cta">
-          <a class="btn primary" data-download href="https://github.com/o7xMarasli/ausymusic-releases/releases/latest">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 20h16" /></svg>
-            <span data-t="hero.cta">Windows için indir</span>
-          </a>
-          <span class="meta" id="meta" data-t="hero.meta">Windows 10 ve 11, 64 bit</span>
+        <div class="hero-copy">
+          <span class="pill"><i></i><span data-t="hero.badge">Beta · Windows için ücretsiz</span></span>
+          <h1 data-t="hero.title">Müziğin, tam sana göre.</h1>
+          <p class="lead" data-t="hero.lead">Milyonlarca şarkı, satır satır akan senkron sözler, dinledikçe sana göre şekillenen karışımlar ve arkadaşlarınla birlikte dinleme. Hepsi tek, sade bir uygulamada.</p>
+          <div class="cta">
+            <a class="btn primary big" data-download href="https://github.com/o7xMarasli/ausymusic-releases/releases/latest">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 20h16" /></svg>
+              <span data-t="hero.cta">Windows için indir</span>
+            </a>
+            <a class="btn ghost big" href="#features" data-t="hero.more">Neler var?</a>
+          </div>
+          <p class="meta" id="meta" data-t="hero.meta">Windows 10 ve 11 · 64 bit · Kendini güncel tutar</p>
         </div>
-
-        <div class="stage">
+        <figure class="window hero-shot">
           <div class="island" aria-hidden="true">
             <span class="cover"></span>
             <span class="eq"><i></i><i></i><i></i><i></i></span>
             <span class="song" data-t="demo.song">Gece Treni</span>
-            <span class="more">
-              <b data-t="demo.song">Gece Treni</b>
-              <em>Ausy Demo</em>
-              <span class="bar"><u></u></span>
-            </span>
           </div>
-          <img class="shot" src="assets/home.webp" width="1280" height="800" alt="Ausy Music ana sayfası: Ausy Mix kartları ve son dinlenenler" data-alt="alt.home" />
-        </div>
-      </section>
-
-      <section class="section" id="features">
-        <h2 data-t="f.title">Dinlemeyi güzelleştiren ayrıntılar</h2>
-        <div class="bento">
-          <article class="card wide lyrics">
-            <div class="copy">
-              <h3 data-t="f.lyrics">Sözler şarkıyla akar</h3>
-              <p data-t="f.lyricsText">Senkron sözleri satır satır izle, bir satıra dokunup oraya atla. Klasik, Karaoke, Odak ve Sinema görünümleri arasından seç.</p>
-            </div>
-            <div class="karaoke" aria-hidden="true">
-              <p>Şehir uyurken yollardayım</p>
-              <p class="on">Rüzgâr adını fısıldıyor</p>
-              <p>Bir sonraki durak sensin</p>
-            </div>
-          </article>
-
-          <article class="card mix">
-            <div class="mixart" aria-hidden="true">
-              <small>AUSY MIX</small>
-              <b>Mix 1</b>
-            </div>
-            <h3 data-t="f.mix">Ausy Mix</h3>
-            <p data-t="f.mixText">Dinledikçe sana özel karışımlar hazırlanır. Beğendiğini tek dokunuşla listene kaydet.</p>
-          </article>
-
-          <article class="card">
-            <div class="pillrow" aria-hidden="true"><span></span></div>
-            <h3 data-t="f.island">Dinamik ada</h3>
-            <p data-t="f.islandText">Başka bir uygulamaya geçtiğinde ekranın üstünde belirir, üzerine gelince açılır. İstersen her zaman üstte duran mini oynatıcıya geç.</p>
-          </article>
-
-          <article class="card">
-            <h3 data-t="f.import">Listelerini getir</h3>
-            <p data-t="f.importText">Bir çalma listesi linki yapıştır, şarkılar kütüphanene gelsin. Sürükleyip sırala, kapağını seç.</p>
-          </article>
-
-          <article class="card">
-            <h3 data-t="f.offline">İnternetsiz dinle</h3>
-            <p data-t="f.offlineText">Şarkı, albüm ve listeleri indir. Bilgisayarındaki müzik klasörlerini de aynı yerde çal.</p>
-          </article>
-
-          <article class="card">
-            <h3 data-t="f.social">Arkadaşlarını takip et</h3>
-            <p data-t="f.socialText">Profilini oluştur, istediğin listeleri paylaş. Listelerin sen açmadıkça gizli kalır.</p>
-          </article>
-
-          <article class="card wide">
-            <h3 data-t="f.sync">Her zaman güncel</h3>
-            <p data-t="f.syncText">Kütüphanen hesabınla eşitlenir, uygulama yeni sürümleri müzik çalmıyorken kendisi kurar.</p>
-          </article>
-        </div>
-
-        <figure class="wide-shot">
-          <img src="assets/lyrics.webp" width="1280" height="800" loading="lazy" alt="Tam ekran oynatıcı ve senkron sözler" data-alt="alt.lyrics" />
+          <img src="assets/shots/home.webp" width="1920" height="1200" alt="Ausy Music ana sayfası: çalma listeleri, yeni çıkanlar ve kaldığın yerden devam et" data-alt="alt.home" fetchpriority="high" />
         </figure>
+        <ul class="stats" aria-label="Kısaca">
+          <li><b>46</b><span data-t="stat.items">eşya</span></li>
+          <li><b>61</b><span data-t="stat.ach">başarım</span></li>
+          <li><b>4</b><span data-t="stat.lang">dil</span></li>
+          <li><b>3</b><span data-t="stat.lyrics">söz kaynağı</span></li>
+        </ul>
       </section>
 
-      <section class="section download" id="download">
-        <h2 data-t="d.title">Dakikalar içinde hazır</h2>
-        <div class="platforms">
-          <div class="platform">
-            <h3>Windows</h3>
-            <p data-t="d.win">Windows 10 ve 11, 64 bit. Kurulumdan sonra kendini güncel tutar.</p>
-            <a class="btn primary" data-download href="https://github.com/o7xMarasli/ausymusic-releases/releases/latest"><span data-t="hero.cta">Windows için indir</span></a>
-            <small id="version"></small>
+      <!-- Özellikler: büyük görseller -->
+      <section class="section" id="features">
+        <header class="section-head">
+          <span class="kicker" data-t="f.kicker">Özellikler</span>
+          <h2 data-t="f.title">Dinlemeyi güzelleştiren her şey</h2>
+          <p data-t="f.lead">Ausy Music sade görünür ama içi dolu. En sevilen özelliklerden bazıları:</p>
+        </header>
+
+        <article class="feature">
+          <div class="feature-copy">
+            <span class="tag" data-t="f.home.tag">Kütüphane</span>
+            <h3 data-t="f.home.title">Her açılışta sana göre bir sayfa</h3>
+            <p data-t="f.home.text">Çalma listelerin en üstte, kaldığın şarkılar ve yeni çıkanlar hemen altında. Dinledikçe altı kişisel Daily Mix hazırlanır, Haftalık Keşifler her hafta henüz dinlemediğin şarkılarla yenilenir. Beğendiklerin, listelerin, albümlerin ve sanatçıların tek bir kütüphanede.</p>
+            <ul class="checks">
+              <li data-t="f.home.l1">Daily Mix ve Haftalık Keşifler</li>
+              <li data-t="f.home.l2">Uygulamadaki herkesin en çok dinledikleri</li>
+              <li data-t="f.home.l3">Sürükleyip sırala, kapak seç, yinelenenleri temizle</li>
+            </ul>
           </div>
-          <div class="platform soon">
+          <figure class="window"><img src="assets/shots/library.webp" width="1920" height="1200" loading="lazy" alt="Kütüphane: beğenilenler, çalma listeleri, albümler ve sanatçılar" data-alt="alt.library" /></figure>
+        </article>
+
+        <article class="feature flip">
+          <div class="feature-copy">
+            <span class="tag" data-t="f.lyrics.tag">Sözler</span>
+            <h3 data-t="f.lyrics.title">Sözler şarkıyla birlikte akar</h3>
+            <p data-t="f.lyrics.text">Senkron sözler satır satır, karaoke görünümünde kelime kelime ilerler. LRCLIB, NetEase ve YouTube Music birlikte aranır; başlığı, sanatçısı ve süresi en iyi tutan söz seçilir. Zamanlama kaçarsa şarkı bazında ileri geri kaydırabilirsin.</p>
+            <ul class="checks">
+              <li data-t="f.lyrics.l1">Klasik, Karaoke, Odak ve Sinema görünümleri</li>
+              <li data-t="f.lyrics.l2">Bir satıra tıkla, şarkı oraya atlasın</li>
+              <li data-t="f.lyrics.l3">Kapak renklerinden dalgalanan tam ekran zemin</li>
+            </ul>
+          </div>
+          <figure class="window"><img src="assets/shots/player.webp" width="1920" height="1200" loading="lazy" alt="Tam ekran oynatıcı ve karaoke görünümünde senkron sözler" data-alt="alt.player" /></figure>
+        </article>
+
+        <article class="feature">
+          <div class="feature-copy">
+            <span class="tag" data-t="f.search.tag">Keşfet</span>
+            <h3 data-t="f.search.title">Ara, keşfet, link yapıştır</h3>
+            <p data-t="f.search.text">Şarkı, albüm, sanatçı ve kullanıcı ara; sonuçlar kaydırdıkça gelir. Ruh haline ya da türe göre gez. Bir çalma listesi linki yapıştır, şarkılar kütüphanene kopyalansın.</p>
+            <ul class="checks">
+              <li data-t="f.search.l1">Ruh hali ve tür sayfaları</li>
+              <li data-t="f.search.l2">Son aramalar arama alanında</li>
+              <li data-t="f.search.l3">Link ile çalma listesi içe aktarma</li>
+            </ul>
+          </div>
+          <figure class="window"><img src="assets/shots/search.webp" width="1920" height="1200" loading="lazy" alt="Arama sayfası: ruh hali ve tür kartları" data-alt="alt.search" /></figure>
+        </article>
+
+        <!-- Küçük özellik kartları -->
+        <div class="grid">
+          <article class="card">
+            <span class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="9" width="14" height="6" rx="3" /></svg></span>
+            <h4 data-t="g.island">Dinamik ada</h4>
+            <p data-t="g.islandText">Başka bir uygulamaya geçince ekranın üstünde belirir. Üzerine gelince açılır, fare tekerleğiyle sesi ayarlarsın.</p>
+          </article>
+          <article class="card">
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 18V9m4 9V5m4 13v-6m4 6V8m4 10v-4" /></svg></span>
+            <h4 data-t="g.eq">Ekolayzır ve efektler</h4>
+            <p data-t="g.eqText">10 bantlı ekolayzır, hazır ayarlar, hız ve perde, yankı ve şarkılar arası geçiş.</p>
+          </article>
+          <article class="card">
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 4v10m0 0-4-4m4 4 4-4M5 19h14" /></svg></span>
+            <h4 data-t="g.offline">İnternetsiz dinleme</h4>
+            <p data-t="g.offlineText">Şarkı, albüm ve listeleri indir; bilgisayarındaki müzik klasörlerini de aynı yerde çal.</p>
+          </article>
+          <article class="card">
+            <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2" /><path d="M7 10h1m3 0h1m3 0h1M8 14h8" /></svg></span>
+            <h4 data-t="g.keys">Klavye kısayolları</h4>
+            <p data-t="g.keysText">15 eylemin tuşunu Ayarlar'dan istediğin gibi değiştir.</p>
+          </article>
+          <article class="card">
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M20 15.5A8 8 0 1 1 8.5 4a6.5 6.5 0 0 0 11.5 11.5Z" /></svg></span>
+            <h4 data-t="g.theme">Koyu ve açık tema</h4>
+            <p data-t="g.themeText">İki tema, kapaktan gelen ya da sabit vurgu rengi, üç arayüz boyutu.</p>
+          </article>
+          <article class="card">
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3M18 3v4h-4M6 21v-4h4" /></svg></span>
+            <h4 data-t="g.sync">Her yerde aynı kütüphane</h4>
+            <p data-t="g.syncText">Beğeniler, listeler ve ayarlar hesabınla arka planda eşitlenir.</p>
+          </article>
+          <article class="card">
+            <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" /><path d="M12 8v4l3 2" /></svg></span>
+            <h4 data-t="g.sleep">Uyku zamanlayıcı</h4>
+            <p data-t="g.sleepText">Seçtiğin süre sonunda ya da şarkı bitince müzik yavaşça kısılıp durur.</p>
+          </article>
+          <article class="card">
+            <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" /><path d="M4 12h16M12 4c2.5 2.2 4 5 4 8s-1.5 5.8-4 8c-2.5-2.2-4-5-4-8s1.5-5.8 4-8Z" /></svg></span>
+            <h4 data-t="g.lang">Dört dil</h4>
+            <p data-t="g.langText">Türkçe, İngilizce, Almanca ve İtalyanca. Uygulama sistem dilini kendisi seçer.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Arkadaşlar, eşyalar, başarımlar -->
+      <section class="section" id="social">
+        <header class="section-head">
+          <span class="kicker" data-t="s.kicker">Birlikte dinle</span>
+          <h2 data-t="s.title">Müzik paylaşınca güzel</h2>
+          <p data-t="s.lead">Arkadaşlarını takip et, Jam'de aynı şarkıyı aynı anda dinle, dinledikçe eşya ve başarım topla.</p>
+        </header>
+
+        <article class="feature">
+          <div class="feature-copy">
+            <span class="tag" data-t="s.items.tag">Eşyalar</span>
+            <h3 data-t="s.items.title">Arkadaşlarının müziğine karış</h3>
+            <p data-t="s.items.text">Dinledikçe 46 farklı eşyadan rastgele düşer. Karşılıklı takipleştiğin bir arkadaşına Sincap Sesi, Nightcore ya da Plak Durması gönder; Kalkan'la sana gelenleri engelle. Etkiler en çok bir dakika sürer, kurallar sunucuda denetlenir.</p>
+            <ul class="checks">
+              <li data-t="s.items.l1">Yaygından efsaneviye dört nadirlik</li>
+              <li data-t="s.items.l2">Aynı kişiye 10 dakikada bir, ayarlardan kapatılabilir</li>
+              <li data-t="s.items.l3">Hazine Sandığı, Zar, Altın Bilet gibi kendine kullanılanlar</li>
+            </ul>
+          </div>
+          <figure class="window"><img src="assets/shots/items.webp" width="1920" height="1200" loading="lazy" alt="Eşyalar sayfası: sıradaki eşya, etkin etkiler ve envanter" data-alt="alt.items" /></figure>
+        </article>
+
+        <article class="feature flip">
+          <div class="feature-copy">
+            <span class="tag" data-t="s.ach.tag">Başarımlar</span>
+            <h3 data-t="s.ach.title">61 başarım, bazıları gizli</h3>
+            <p data-t="s.ach.text">Dinleme süresi, seri, çeşitlilik ve sadakat başarımları bronzdan platine dört seviyede. Bazılarının ne olduğu açılana kadar görünmez; bazıları gerçekten zor.</p>
+            <ul class="checks">
+              <li data-t="s.ach.l1">500 saat dinleme, 100 günlük seri</li>
+              <li data-t="s.ach.l2">Gece Kuşu, Saat Üç gibi gizli başarımlar</li>
+              <li data-t="s.ach.l3">İlerleme çubukları ve açılma bildirimleri</li>
+            </ul>
+          </div>
+          <figure class="window"><img src="assets/shots/achievements.webp" width="1920" height="1200" loading="lazy" alt="Başarımlar sayfası: genel ilerleme ve başarım kartları" data-alt="alt.ach" /></figure>
+        </article>
+
+        <div class="duo">
+          <div>
+            <figure class="window"><img src="assets/shots/profile.webp" width="1920" height="1200" loading="lazy" alt="Profil sayfası" data-alt="alt.profile" /></figure>
+            <h4 data-t="s.profile.title">Profil ve Jam</h4>
+            <p data-t="s.profile.text">Profilinde son ve en çok dinlediklerin, herkese açık listelerin ve o an çaldığın şarkı görünür. Jam'de bir davet linkiyle arkadaşların aynı şarkıyı seninle eş zamanlı dinler.</p>
+          </div>
+          <div>
+            <figure class="window"><img src="assets/shots/stats.webp" width="1920" height="1200" loading="lazy" alt="İstatistikler sayfası" data-alt="alt.stats" /></figure>
+            <h4 data-t="s.stats.title">İstatistikler</h4>
+            <p data-t="s.stats.text">Ne kadar dinlediğini, en yoğun gün ve saatlerini, en çok dinlediğin şarkı ve sanatçıları gör.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Temalar -->
+      <section class="section">
+        <header class="section-head">
+          <span class="kicker" data-t="t.kicker">Görünüm</span>
+          <h2 data-t="t.title">Gece de gündüz de rahat</h2>
+        </header>
+        <div class="duo">
+          <div>
+            <figure class="window"><img src="assets/shots/settings.webp" width="1920" height="1200" loading="lazy" alt="Ayarlar: görünüm, tema ve vurgu rengi" data-alt="alt.settings" /></figure>
+            <h4 data-t="t.dark">Koyu tema ve ayarlar</h4>
+          </div>
+          <div>
+            <figure class="window"><img src="assets/shots/home-light.webp" width="1920" height="1200" loading="lazy" alt="Açık temada ana sayfa" data-alt="alt.light" /></figure>
+            <h4 data-t="t.light">Açık tema</h4>
+          </div>
+        </div>
+      </section>
+
+      <!-- İndir -->
+      <section class="section" id="download">
+        <header class="section-head">
+          <span class="kicker" data-t="d.kicker">İndir</span>
+          <h2 data-t="d.title">Dakikalar içinde hazır</h2>
+        </header>
+        <div class="dl">
+          <div class="dl-card">
+            <h3>Windows</h3>
+            <p data-t="d.win">Windows 10 ve 11, 64 bit. Kurulumdan sonra yeni sürümleri kendisi kurar, müzik çalarken bile.</p>
+            <a class="btn primary big" data-download href="https://github.com/o7xMarasli/ausymusic-releases/releases/latest"><span data-t="hero.cta">Windows için indir</span></a>
+            <small id="version"></small>
+            <ol class="steps">
+              <li data-t="d.s1">Kurulum dosyasını indir ve çalıştır.</li>
+              <li data-t="d.s2">Windows uyarı gösterirse "Ek bilgi" ve "Yine de çalıştır"a tıkla.</li>
+              <li data-t="d.s3">Ücretsiz hesabını aç ya da Google ile giriş yap.</li>
+            </ol>
+          </div>
+          <div class="dl-card soon">
             <h3>Android</h3>
             <p data-t="d.android">Üzerinde çalışıyoruz. Hazır olunca buradan indirebileceksin.</p>
-            <span class="btn disabled" data-t="d.soon">Yakında</span>
+            <span class="btn ghost big disabled" data-t="d.soon">Yakında</span>
           </div>
         </div>
       </section>
 
+      <!-- Sürüm notları -->
+      <section class="section" id="releases">
+        <header class="section-head">
+          <span class="kicker" data-t="r.kicker">Sürümler</span>
+          <h2 data-t="r.title">Neler değişti?</h2>
+          <p data-t="r.lead">Son sürümler ve notları. Ausy Music 1.0'a kadar beta olarak gelişmeye devam ediyor.</p>
+        </header>
+        <div class="releases" id="release-list">
+          <p class="muted" data-t="r.loading">Sürümler yükleniyor…</p>
+        </div>
+        <p class="center"><a class="btn ghost" href="https://github.com/o7xMarasli/ausymusic-releases/releases" data-t="r.all">Tüm sürümler</a></p>
+      </section>
+
+      <!-- Sorular -->
       <section class="section faq" id="faq">
-        <h2 data-t="q.title">Merak edilenler</h2>
+        <header class="section-head">
+          <span class="kicker" data-t="q.kicker">Sorular</span>
+          <h2 data-t="q.title">Merak edilenler</h2>
+        </header>
         <details>
           <summary data-t="q.free">Ücretsiz mi?</summary>
-          <p data-t="q.freeA">Evet. Ücretsiz bir hesap açman yeterli.</p>
+          <p data-t="q.freeA">Evet. Ücretsiz bir hesap açman yeterli; abonelik ya da ücretli sürüm yok.</p>
         </details>
         <details>
           <summary data-t="q.warn">Windows neden uyarı gösteriyor?</summary>
@@ -137,21 +280,48 @@
         </details>
         <details>
           <summary data-t="q.account">Neden hesap gerekiyor?</summary>
-          <p data-t="q.accountA">Beğenilerin, listelerin ve ayarların cihazlar arasında eşitlensin diye. E-postan profilinde görünmez.</p>
+          <p data-t="q.accountA">Beğenilerin, listelerin ve ayarların cihazlar arasında eşitlensin, arkadaşlarını takip edebilesin diye. E-postan profilinde hiçbir zaman görünmez.</p>
+        </details>
+        <details>
+          <summary data-t="q.items">Eşya sistemini istemiyorum, kapatabilir miyim?</summary>
+          <p data-t="q.itemsA">Evet. Ayarlar &gt; Gizlilik'ten kapatınca eşya kazanmazsın ve kimse sana eşya kullanamaz.</p>
+        </details>
+        <details>
+          <summary data-t="q.privacy">Dinlediklerimi kimler görür?</summary>
+          <p data-t="q.privacyA">Profilinde son ve en çok dinlediklerini yalnız "Dinleme etkinliğini paylaş" açıkken giriş yapmış kullanıcılar görür. Bu ayar Gizlilik bölümünde.</p>
         </details>
         <details>
           <summary data-t="q.android">Android ne zaman gelecek?</summary>
           <p data-t="q.androidA">Geliştirme sürüyor. Çıktığında bu sayfadan duyuracağız.</p>
         </details>
       </section>
+
+      <!-- Geri bildirim -->
+      <section class="section">
+        <div class="feedback">
+          <div>
+            <h2 data-t="fb.title">Bir hata mı buldun, fikrin mi var?</h2>
+            <p data-t="fb.text">Uygulamada sol alttaki geri bildirim düğmesini kullan ya da doğrudan GitHub'da yaz. Her mesajı okuyoruz.</p>
+          </div>
+          <div class="fb-actions">
+            <a class="btn primary" href="https://github.com/o7xMarasli/ausymusic-releases/issues/new?template=bug.yml" data-t="fb.bug">Hata bildir</a>
+            <a class="btn ghost" href="https://github.com/o7xMarasli/ausymusic-releases/issues/new?template=idea.yml" data-t="fb.idea">Öneri gönder</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="foot">
-      <p data-t="foot.note">Ausy Music bağımsız bir projedir; YouTube, Spotify veya bağlı şirketlerle ilişkisi yoktur.</p>
-      <p>
-        <a href="https://github.com/o7xMarasli/ausymusic-releases/releases" data-t="foot.releases">Tüm sürümler</a>
-      </p>
+      <div class="foot-row">
+        <a class="brand" href="#top"><img src="assets/logo.png" alt="" width="26" height="26" /> Ausy Music</a>
+        <nav aria-label="Bağlantılar">
+          <a href="https://github.com/o7xMarasli/ausymusic-releases/releases" data-t="foot.releases">Sürümler</a>
+          <a href="https://github.com/o7xMarasli/ausymusic-releases/issues" data-t="foot.issues">Geri bildirim</a>
+          <a href="#faq" data-t="nav.faq">Sorular</a>
+        </nav>
+      </div>
+      <p data-t="foot.note">Ausy Music bağımsız bir projedir; YouTube, Spotify veya bağlı şirketlerle ilişkisi yoktur. Ekran görüntülerindeki şarkı ve sanatçı adları örnektir.</p>
     </footer>
-    <script src="app.js"></script>
+    <script src="site.js"></script>
   </body>
 </html>

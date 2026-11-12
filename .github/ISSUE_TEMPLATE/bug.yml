@@ -1,0 +1,45 @@
+name: Hata bildir / Report a bug
+description: Ausy Music'te bir şey beklendiği gibi çalışmıyor. / Something in Ausy Music doesn't work as expected.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Teşekkürler! Lütfen e-posta, şifre ya da kişisel bilgi yazma; burası herkese açık.
+        Thanks! Please don't include your email, password or personal details; this page is public.
+  - type: textarea
+    id: what
+    attributes:
+      label: Ne oldu? / What happened?
+      description: Ne yaptın, ne bekliyordun, ne oldu? / What did you do, what did you expect, what happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Nasıl tekrarlanır? / How to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+  - type: input
+    id: version
+    attributes:
+      label: Sürüm / Version
+      description: Ayarlar > Hakkında / Settings > About
+      placeholder: "0.2.5"
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Windows 11
+        - Windows 10
+        - Android
+  - type: dropdown
+    id: often
+    attributes:
+      label: Ne sıklıkla? / How often?
+      options:
+        - Her seferinde / Every time
+        - Bazen / Sometimes
+        - Bir kez / Once

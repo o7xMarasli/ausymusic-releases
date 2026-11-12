@@ -1,0 +1,16 @@
+name: Öneri gönder / Suggest an idea
+description: Ausy Music'e eklenmesini istediğin bir şey. / Something you'd like to see in Ausy Music.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Fikrin / Your idea
+      description: Ne istiyorsun ve sana neden faydalı olur? / What would you like and why would it help you?
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Örnek / Example
+      description: Başka bir uygulamada gördüysen anlatabilirsin. / If you've seen it elsewhere, describe it.
