@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ausy Music'te aç</title>
+    <meta name="description" content="Ausy Music paylaşım linki: uygulamada aç ve dinle." />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="theme-color" content="#0a0a0b" />
+    <link rel="icon" href="../assets/logo.png" />
+    <link rel="stylesheet" href="../site.css" />
+    <style>
+      /* Paylaşım sayfası: uygulamayı ausymusic://open/<tür>/<kimlik> ile açar. Düzen jam/ sayfasıyla aynı. */
+      body {
+        background: radial-gradient(900px 560px at 85% -80px, rgba(19, 202, 181, 0.18) 0%, transparent 70%), radial-gradient(900px 600px at 0% 110%, rgba(164, 139, 247, 0.14) 0%, transparent 70%), var(--bg);
+      }
+      .op-wrap {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px 16px;
+      }
+      .op-card {
+        width: min(520px, 100%);
+        padding: 36px 32px 28px;
+        border-radius: 26px;
+        background: var(--glass);
+        box-shadow: inset 0 0 0 1px var(--line), 0 30px 80px rgba(0, 0, 0, 0.45);
+        animation: op-in 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+      .op-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+      }
+      .op-brand img {
+        border-radius: 9px;
+      }
+      .op-kind {
+        display: inline-block;
+        margin-top: 34px;
+        padding: 4px 12px;
+        border-radius: 999px;
+        background: var(--chip);
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .op-card h1 {
+        margin-top: 12px;
+        font-size: 30px;
+        line-height: 1.15;
+        letter-spacing: -0.025em;
+      }
+      .op-card p {
+        margin-top: 10px;
+        color: var(--muted);
+      }
+      .op-card .op-en {
+        margin-top: 2px;
+        font-size: 14px;
+        opacity: 0.8;
+      }
+      .op-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+      .op-actions a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+        padding: 0 24px;
+        border-radius: 999px;
+        font-weight: 650;
+        background: var(--chip);
+        transition: background 0.15s;
+      }
+      .op-actions a:hover {
+        background: rgba(255, 255, 255, 0.14);
+      }
+      .op-actions .op-open {
+        background: var(--accent);
+        color: var(--on-accent);
+      }
+      .op-actions .op-open:hover {
+        background: #3ad8c6;
+      }
+      .op-card .op-note {
+        margin-top: 22px;
+        font-size: 13px;
+        color: var(--faint);
+      }
+      .op-bad,
+      .op-actions .op-yt {
+        display: none;
+      }
+      .is-bad .op-ok,
+      .is-bad .op-open {
+        display: none;
+      }
+      .is-bad .op-bad {
+        display: block;
+      }
+      .has-yt .op-actions .op-yt {
+        display: inline-flex;
+      }
+      @keyframes op-in {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .op-card {
+          animation: none;
+        }
+      }
+      @media (max-width: 480px) {
+        .op-card {
+          padding: 28px 22px 22px;
+        }
+        .op-actions a {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="op-wrap">
+      <section class="op-card" id="card">
+        <span class="op-brand"><img src="../assets/logo.png" alt="" width="34" height="34" /> Ausy Music</span>
+        <div class="op-ok">
+          <span class="op-kind" id="kind">Paylaşım</span>
+          <h1>Ausy Music'te açılıyor</h1>
+          <p>Biri seninle bir şey paylaştı. Uygulama açılmazsa aşağıdaki düğmeye bas.</p>
+          <p class="op-en" lang="en">Someone shared this with you. If the app does not open, use the button below.</p>
+        </div>
+        <div class="op-bad">
+          <h1>Bu link geçersiz</h1>
+          <p>Link eksik ya da hatalı görünüyor. Paylaşan kişiden yeni bir link iste.</p>
+          <p class="op-en" lang="en">This link looks invalid. Ask the sender for a new one.</p>
+        </div>
+        <div class="op-actions">
+          <a class="op-open" id="open" href="ausymusic://open">Uygulamada aç</a>
+          <a href="../">Uygulamayı indir</a>
+          <a class="op-yt" id="yt" href="https://music.youtube.com/" rel="noopener noreferrer">YouTube Music'te dinle</a>
+        </div>
+        <p class="op-note">Ausy Music yüklü değilse önce indirip kur, sonra bu linke tekrar tıkla.</p>
+      </section>
+    </main>
+    <script>
+      // Uygulamadaki src/lib/share.ts ile aynı kurallar: ?k=<tür>&id=<kimlik>
+      // "list" Ausy listesidir (UUID); diğerleri YouTube Music kimliğidir.
+      (function () {
+        var KINDS = { song: "Şarkı · Song", album: "Albüm · Album", playlist: "Çalma listesi · Playlist", artist: "Sanatçı · Artist", list: "Ausy listesi · Ausy playlist" };
+        var CATALOG_ID = /^[A-Za-z0-9_-]{6,80}$/;
+        var UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+        var YT = {
+          song: "https://music.youtube.com/watch?v=",
+          album: "https://music.youtube.com/browse/",
+          playlist: "https://music.youtube.com/playlist?list=",
+          artist: "https://music.youtube.com/channel/",
+        };
+        var q = new URLSearchParams(location.search);
+        var kind = (q.get("k") || "").trim();
+        var id = (q.get("id") || "").trim();
+        var card = document.getElementById("card");
+        var ok = Object.prototype.hasOwnProperty.call(KINDS, kind) && (kind === "list" ? UUID.test(id) : CATALOG_ID.test(id));
+        if (!ok) {
+          card.className += " is-bad";
+          return;
+        }
+        document.getElementById("kind").textContent = KINDS[kind];
+        if (YT[kind]) {
+          document.getElementById("yt").setAttribute("href", YT[kind] + id);
+          card.className += " has-yt";
+        }
+        var target = "ausymusic://open/" + kind + "/" + id;
+        document.getElementById("open").setAttribute("href", target);
+        location.href = target;
+      })();
+    </script>
+  </body>
+</html>
